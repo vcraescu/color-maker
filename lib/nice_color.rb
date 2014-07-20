@@ -1,33 +1,36 @@
 require "nice_color/version"
+require 'active_support/core_ext/hash/keys'
+require 'active_support/core_ext/object/try'
 require 'color'
+require 'yaml'
 
 module NiceColor
+  PHI = 0.618033988749895
+
+  @colors_path = File.join(File.dirname(__FILE__), 'colors.yml')
+  @make_color_default = {
+    hue: nil,
+    saturation: nil,
+    value: nil,
+    base_color: nil,
+    greyscale: false,
+    grayscale: false,
+    golden: true,
+    full_random: false,
+    colors_returned: 1,
+  }
+
+  @make_scheme_default = {
+    scheme_type: 'analogous',
+    format: 'hex'
+  }
+
+  @make_contrast_default = {
+    golden: false,
+    format: 'hex'
+  }
+
   class << self
-    PHI = 0.618033988749895
-
-    @colors_path = File.expand_path(File.join(File.dirname(__FILE__)), 'colors.yml')
-    @make_color_default = {
-      hue: nil,
-      saturation: nil,
-      value: nil,
-      base_color: '',
-      greyscale: false,
-      grayscale: false,
-      golden: true,
-      full_random: true,
-      colors_returned: 1,
-    }
-
-    @make_scheme_default = {
-      scheme_type: 'analogous',
-      format: 'hex'
-    }
-
-    @make_contract_default = {
-      golden: false,
-      format: 'hex'
-    }
-
     def from_name(name)
       name = name.downcase.to_sym
       raise 'Color name not recognized' if colors.key?(name.to_sym)
@@ -42,7 +45,8 @@ module NiceColor
       options[:colors_returned].times do |i|
         random_hue = rand(0..360)
         if base_color
-          hue = rand((base_color.h - 5), (base_color.h + 5))
+          base_color = base_color.to_hsl
+          hue = rand((base_color.hue - 5), (base_color.hue + 5))
           saturation = rand(0.4..0.85)
           value = rand(0.4..0.85)
           color << hsv_to_color(h: hue, s: saturation, v: value)
@@ -59,11 +63,11 @@ module NiceColor
           end
 
           # set saturation
-          if options[:grayscale]
+          if options[:greyscale]
             saturation = 0
           elsif options[:full_random]
-            saturation = rand(0.0..1.0)
-          elsif options.nil?
+            saturation = rand(0..1.0)
+          elsif options[:saturation].nil?
             saturation = 0.4
           else
             saturation = clamp(options[:saturation], 0, 1)
@@ -71,10 +75,10 @@ module NiceColor
 
           # set value
           if options[:full_random]
-            value = rand(0.0..1.0)
-          elsif options[:grayscale]
+            value = rand(0..1.0)
+          elsif options[:greyscale]
             value = rand(0.15..0.75)
-          elsif options[:value]
+          elsif options[:value].nil?
             value = 0.75
           else
             value = clamp(options[:value], 0, 1)
@@ -82,16 +86,16 @@ module NiceColor
 
           color << hsv_to_color(h: hue, s: saturation, v: value)
         end
-
-        color.size == 1 ? color[0] : color
       end
+
+      color = color[0] if color.size == 1
     end
 
     private
     def hsv_to_rgb(hsv)
-      h = hsv.h / 360
-      s = hsv.s
-      v = hsv.v
+      h = hsv[:h] / 360
+      s = hsv[:s]
+      v = hsv[:v]
       i = (h * 6).floor
       f = h * 6 - i
       p = v * (1 - s)
@@ -117,7 +121,7 @@ module NiceColor
     end
 
     def rgb_to_color(rgb)
-      Color.new(rgb.r, rgb.g, rgb.b)
+      Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
     end
 
     def hsv_to_color(hsv)
@@ -131,8 +135,9 @@ module NiceColor
 
     def colors
       return @colors if @colors
-      @colors = YAML.load_from_file(@colors_path)
-      @colors.try(:symbolize_keys!)
+      @colors = YAML.load_file(@colors_path)
+      @colors.symbolize_keys!
+      @colors
     end
   end
 end
