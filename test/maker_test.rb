@@ -37,5 +37,9 @@ describe Color::Maker do
     color = maker.make(:base_color => 'rosybrown')
     color.hex.must_equal '983036'
   end
+
+  it 'multiple colors' do
+
+  end
 end
 
