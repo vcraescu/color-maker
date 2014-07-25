@@ -1,3 +1,11 @@
+require "color/maker/version"
+require 'color/maker'
+require 'color/maker/util'
+require 'active_support/core_ext/hash/keys'
+require 'active_support/core_ext/object/try'
+require 'color'
+require 'yaml'
+
 module Color
   class Maker
     PHI = 0.618033988749895
@@ -23,7 +31,7 @@ module Color
 
       def colors
         return @colors if @colors
-        @colors = YAML.load_file(@colors_path)
+        @colors = ::YAML.load_file(@colors_path)
         @colors.symbolize_keys!
         @colors
       end
