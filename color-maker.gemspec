@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'nice_color/version'
+require 'color-maker/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "nice_color"
-  spec.version       = NiceColor::VERSION
+  spec.name          = "color-maker"
+  spec.version       = Color::Maker::VERSION
   spec.authors       = ["Viorel Craescu"]
   spec.email         = ["viorel@craescu.com"]
   spec.summary       = %q{Color generator}
