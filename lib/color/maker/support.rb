@@ -1,6 +1,6 @@
 module Color
   class Maker
-    module Util
+    module Support
       class << self
         def hsv_to_rgb(hsv)
           h, s, v = hsv[:h] / 360.0, hsv[:s], hsv[:v]
@@ -49,7 +49,7 @@ end
 
 class String
   def to_color
-    Color::Maker::Util.hex_to_color(self)
+    Color::Maker::Support.hex_to_color(self)
   end
 end
 
@@ -60,14 +60,14 @@ class Hash
       r = self.fetch(:r, self.fetch(:red, 0)).to_i
       g = self.fetch(:g, self.fetch(:green, 0)).to_i
       b = self.fetch(:b, self.fetch(:blue, 0)).to_i
-      return Color::Maker::Util::rgb_to_color(r: r, g: g, b: b)
+      return Color::Maker::Support::rgb_to_color(r: r, g: g, b: b)
     end
 
     if format == :hsv
       h = self.fetch(:h, self.fetch(:hue, 0)).to_f
       s = self.fetch(:s, self.fetch(:saturation, 0)).to_f
       v = self.fetch(:v, self.fetch(:value, 0)).to_f
-      return Color::Maker::Util::hsv_to_color(h: h, s: s, v: v)
+      return Color::Maker::Support::hsv_to_color(h: h, s: s, v: v)
     end
     
     raise "Unknow color format: #{format}"
@@ -79,12 +79,12 @@ class Array
     format = format.to_sym
     if format == :rgb
       r, g, b = self.map(&:to_i)
-      return Color::Maker::Util::rgb_to_color(r: r, g: g, b: b)
+      return Color::Maker::Support::rgb_to_color(r: r, g: g, b: b)
     end
 
     if format == :hsv
       h, s, v = self.map(&:to_f)
-      return Color::Maker::Util::hsv_to_color(h: h, s: s, v: v)
+      return Color::Maker::Support::hsv_to_color(h: h, s: s, v: v)
     end
   end
 end
