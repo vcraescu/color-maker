@@ -29,7 +29,7 @@ module Color
         end
 
         def rgb_to_color(rgb)
-          ::Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
+          Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
         end
 
         def hsv_to_color(hsv)
@@ -40,7 +40,7 @@ module Color
         def hex_to_color(hex)
           hex = hex.delete('#').strip
           raise 'Invalid hex number' unless hex.hex?
-          ::Color::RGB.by_hex(hex) 
+          Color::RGB.by_hex(hex) 
         end
 
       end

@@ -1,3 +1,3 @@
 require 'minitest/autorun'
-require 'color/maker'
+require 'color-maker'
 

@@ -1,0 +1,10 @@
+require "color/maker/version"
+require 'color/hash'
+require 'color/string'
+require 'color/array'
+require 'color/maker'
+require 'color/maker/support'
+require 'active_support/core_ext/hash/keys'
+require 'active_support/core_ext/object/try'
+require 'color'
+require 'yaml'
