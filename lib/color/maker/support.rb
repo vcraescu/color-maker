@@ -28,6 +28,86 @@ module Color
           { r: r, g: g, b: b }
         end
 
+        def rgb_to_hsv(rgb)
+          r, g, b = rgb[:r] / 255.0, rgb[:g] / 255.0, rgb[:b] / 255.0  
+          min, max = [r, g, b].min, [r, g, b].max
+          delta = max - min
+          v = max
+
+          return { h: -1, s: 0, v: v } if max == 0
+
+          s = delta / max
+          h = 4 + (r - g) / delta
+
+          if r == max
+            h = (g - b) / delta
+          elsif g == max
+            h = 2 + (b - r) / delta
+          end
+
+          h *= 60
+          h += 360 if h < 0
+          { h: h.round(2).round(0), s: s.round(2), v: v.round(2) }
+        end
+
+        def rgb_to_hsl(rgb)
+          r, g, b = rgb[:r] / 255.0, rgb[:g] / 255.0, rgb[:b] / 255.0  
+          min, max = [r, g, b].min, [r, g, b].max
+          delta = max - min
+
+          l = (min + max) / 2.0
+          return { h: 0, s: 0, l: l } if delta == 0
+
+          s = l < 0.5 ? delta / (max + min) : delta / (2 - max - min)
+
+          case(max)
+          when r
+            h = (g - b) / delta + (g < b ? 6 : 0)
+          when g
+            h = (b - r) / delta + 2
+          when b
+            h = (r - g) / delta + 4
+          end
+
+          h *= 60
+
+          { h: h.round(0), s: s.round(2), l: l.round(2) }
+        end
+
+        def hsl_to_rgb(hsl)
+          h, s, l = hsl[:h].to_f / 360.0, hsl[:s].to_f, hsl[:l].to_f
+          return { r: l, g: l, b: l } if s == 0
+
+          q = l < 0.5 ? l * (1 + s) : l + s - l * s
+          p = 2 * l - q
+
+          r = hue_to_rgb(p: p, q: q, t: h + 1 / 3.0) * 255
+          g = hue_to_rgb(p: p, q: q, t: h) * 255
+          b = hue_to_rgb(p: p, q: q, t: h - 1 / 3.0) * 255
+
+          { r: r.round(0), g: g.round(0), b: b.round(0) }
+        end
+
+        def hsv_to_hsl(hsv)
+          rgb = hsv_to_rgb(hsv)
+          rgb_to_hsl(rgb)
+        end
+
+        def hsl_to_color(hsl)
+          rgb = hsl_to_rgb(hsl)
+          Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
+        end
+
+        def hue_to_rgb(hue)
+          p, q, t = hue[:p], hue[:q], hue[:t]
+          t += 1 if t < 0
+          t -= 1 if t > 1
+          return p + (q - p) * 6 * t if t < (1 / 6.0)
+          return q if t < (1 / 2.0)
+          return p + (q - p) * (2 / 3.0 - t) * 6 if t < (2 / 3.0)
+          p
+        end
+
         def rgb_to_color(rgb)
           Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
         end

@@ -28,4 +28,28 @@ describe Color::Maker::Support do
     color = hex.to_color
     color.must_equal Color::RGB.by_hex(hex)
   end
+
+  it 'rgb to hsv' do
+    hsv = Color::Maker::Support.rgb_to_hsv(r: 15, g: 193, b: 17)
+    hsv.must_equal({ h: 121, s: 0.92, v: 0.76 })
+
+    hsv = Color::Maker::Support.rgb_to_hsv(r: 25, g: 115, b: 189)
+    hsv.must_equal({ h: 207, s: 0.87, v: 0.74 })
+  end
+
+  it 'rgb to hsl' do
+    hsl = Color::Maker::Support.rgb_to_hsl(r: 15, g: 193, b: 17)
+    hsl.must_equal({ h: 121, s: 0.86, l: 0.41 })
+
+    hsl = Color::Maker::Support.rgb_to_hsl(r: 25, g: 115, b: 189)
+    hsl.must_equal({ h: 207, s: 0.77, l: 0.42 })
+  end
+
+  it 'hsl to rgb' do
+    rgb = Color::Maker::Support.hsl_to_rgb(h: 121, s: 0.86, l: 0.41)
+    rgb.must_equal({ r: 15, g: 194, b: 18 })
+
+    rgb = Color::Maker::Support.hsl_to_rgb(h: 207, s: 0.77, l: 0.42)
+    rgb.must_equal({ r: 25, g: 115, b: 190 })
+  end
 end
