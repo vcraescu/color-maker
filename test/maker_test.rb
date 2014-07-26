@@ -39,7 +39,26 @@ describe Color::Maker do
   end
 
   it 'multiple colors' do
+    maker = Color::Maker.new(seed: 1234, count: 5)
+    colors = maker.make
+    colors.size.must_equal 5
 
+    colors.map!(&:hex)
+    colors.must_equal ['aebf72', '72afbf', 'bfb272', '72bf8a', '72bfb7']
+  end
+
+  it 'generator can be overriden inside make method' do
+    maker = Color::Maker.new(seed: 1234, count: 5)
+    colors = maker.make
+    colors.size.must_equal 5
+
+    colors.map!(&:hex)
+    colors.must_equal ['aebf72', '72afbf', 'bfb272', '72bf8a', '72bfb7']
+
+    maker = Color::Maker.new(seed: 1234, count: 5)
+    colors = maker.make(seed: 4444)
+    colors.size.must_equal 5
+    colors.wont_equal ['aebf72', '72afbf', 'bfb272', '72bf8a', '72bfb7']
   end
 end
 

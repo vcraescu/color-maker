@@ -38,7 +38,8 @@ module Color
         end
 
         def hex_to_color(hex)
-          hex = hex.delete('#')
+          hex = hex.delete('#').strip
+          raise 'Invalid hex number' unless hex.hex?
           Color::RGB.by_hex(hex) 
         end
 
