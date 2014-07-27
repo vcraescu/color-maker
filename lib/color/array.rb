@@ -11,6 +11,11 @@ class Array
       return Color::Maker::Support::hsv_to_color(h: h.to_f, s: s.to_f, v: v.to_f)
     end
 
+    if format == :hsl
+      h, s, l = self
+      return Color::Maker::Support::hsl_to_color(h: h.to_f, s: s.to_f, l: l.to_f)
+    end
+
     raise "Unknown color format: #{format}"
   end
 end

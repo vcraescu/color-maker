@@ -29,13 +29,19 @@ describe Array do
     it 'h: 200, s: 0.7, v: 0.4' do
       a = [200, 0.7, 0.4]
       color = a.to_color(:hsv)
-      color.hex.must_equal '1e4e66'
+      color.hex.must_equal '1f4e66'
     end
 
     it 'r: 255, g: 255, b: 255' do
       a = [255, 255, 255]
       color = a.to_color(:rgb)
       color.hex.must_equal 'ffffff'
+    end
+
+    it 'h: 61, s: 0.30, l: 0.55' do
+      a = [61, 0.30, 0.55]
+      color = a.to_color(:hsl)
+      color.hex.must_equal 'aeaf6a'
     end
 
     it 'wrong format specified' do

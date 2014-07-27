@@ -3,22 +3,22 @@ require 'test_helper'
 describe Color::Maker do
   it 'golden: false, hue: 12, saturation: 0.7, value: 0.8' do
     color = Color::Maker.new.make(golden: false, hue: 12, saturation: 0.7, value: 0.8)
-    color.hex.must_equal 'cc593d'
+    color.hex.must_equal 'cc5a3d'
   end
 
   it 'golden: true, hue: 16, saturation: 0.5, value: 0.65' do
     color = Color::Maker.new.make(golden: false, hue: 16, saturation: 0.5, value: 0.65)
-    color.hex.must_equal 'a56852'
+    color.hex.must_equal 'a66953'
   end
 
   it 'golden: false, hue: 10, saturation: 0.6, value: 0.80' do
     color = Color::Maker.new.make(golden: false, hue: 10, saturation: 0.6, value: 0.80)
-    color.hex.must_equal 'cc6651'
+    color.hex.must_equal 'cc6652'
   end
 
   it 'golden: false, hue: 12, saturation: 0.9, value: 0.3' do
     color = Color::Maker.new.make(golden: false, hue: 12, saturation: 0.9, value: 0.3)
-    color.hex.must_equal '4c1507'
+    color.hex.must_equal '4d1508'
   end
 
   it 'grayscale: true, hue: 12' do
@@ -29,13 +29,13 @@ describe Color::Maker do
   it 'base_color: :aliceblue' do
     maker = Color::Maker.new(seed: 1234)
     color = maker.make(:base_color => :aliceblue)
-    color.hex.must_equal '306d98'
+    color.hex.must_equal '316d98'
   end
 
   it 'base_color: rosybrown' do
     maker = Color::Maker.new(seed: 1234)
     color = maker.make(:base_color => 'rosybrown')
-    color.hex.must_equal '983036'
+    color.hex.must_equal '983136'
   end
 
   it 'multiple colors' do
@@ -44,7 +44,7 @@ describe Color::Maker do
     colors.size.must_equal 5
 
     colors.map!(&:hex)
-    colors.must_equal ['aebf72', '72afbf', 'bfb272', '72bf8a', '72bfb7']
+    colors.must_equal ['aebf73', '73afbf', 'bfb273', '73bf8b', '73bfb8']
   end
 
   it 'generator can be overriden inside make method' do
@@ -53,7 +53,7 @@ describe Color::Maker do
     colors.size.must_equal 5
 
     colors.map!(&:hex)
-    colors.must_equal ['aebf72', '72afbf', 'bfb272', '72bf8a', '72bfb7']
+    colors.must_equal ['aebf73', '73afbf', 'bfb273', '73bf8b', '73bfb8']
 
     maker = Color::Maker.new(seed: 1234, count: 5)
     colors = maker.make(seed: 4444)

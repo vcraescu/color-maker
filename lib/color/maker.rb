@@ -48,7 +48,9 @@ module Color
       options[:count].times do |i|
         if base_color
           base_color = base_color.to_hsl
-          hue = self.generator.rand((base_color.hue - 5)..(base_color.hue + 5))
+          base_color = Support::hsl_to_hsv(h: base_color.hue, s: base_color.s, l: base_color.l)
+
+          hue = self.generator.rand((base_color[:h] - 5)..(base_color[:h] + 5))
           saturation = self.generator.rand(0.4..0.85)
           value = self.generator.rand(0.4..0.85)
           colors << [hue, saturation, value].to_color(:hsv)

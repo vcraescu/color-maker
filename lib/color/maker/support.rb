@@ -3,7 +3,7 @@ module Color
     module Support
       class << self
         def hsv_to_rgb(hsv)
-          h, s, v = hsv[:h] / 360.0, hsv[:s], hsv[:v]
+          h, s, v = hsv[:h].to_f / 360.0, hsv[:s].to_f, hsv[:v].to_f
           i = (h * 6).floor
           f = h * 6 - i
           p = v * (1 - s)
@@ -24,12 +24,12 @@ module Color
             r, g, b = v, p, q
           end
           
-          r, g, b = (r * 255).floor, (g * 255).floor, (b * 255).floor
+          r, g, b = (r * 255).round(0), (g * 255).round(0), (b * 255).round(0)
           { r: r, g: g, b: b }
         end
 
         def rgb_to_hsv(rgb)
-          r, g, b = rgb[:r] / 255.0, rgb[:g] / 255.0, rgb[:b] / 255.0  
+          r, g, b = rgb[:r].to_f / 255.0, rgb[:g].to_f / 255.0, rgb[:b].to_f / 255.0  
           min, max = [r, g, b].min, [r, g, b].max
           delta = max - min
           v = max
@@ -47,11 +47,11 @@ module Color
 
           h *= 60
           h += 360 if h < 0
-          { h: h.round(2).round(0), s: s.round(2), v: v.round(2) }
+          { h: h.round(1), s: s.round(3), v: v.round(3) }
         end
 
         def rgb_to_hsl(rgb)
-          r, g, b = rgb[:r] / 255.0, rgb[:g] / 255.0, rgb[:b] / 255.0  
+          r, g, b = rgb[:r].to_f / 255.0, rgb[:g].to_f / 255.0, rgb[:b].to_f / 255.0  
           min, max = [r, g, b].min, [r, g, b].max
           delta = max - min
 
@@ -71,7 +71,7 @@ module Color
 
           h *= 60
 
-          { h: h.round(0), s: s.round(2), l: l.round(2) }
+          { h: h.round(1), s: s.round(3), l: l.round(3) }
         end
 
         def hsl_to_rgb(hsl)
@@ -93,13 +93,18 @@ module Color
           rgb_to_hsl(rgb)
         end
 
+        def hsl_to_hsv(hsl)
+          rgb = hsl_to_rgb(hsl)
+          rgb_to_hsv(rgb)
+        end
+
         def hsl_to_color(hsl)
           rgb = hsl_to_rgb(hsl)
           Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
         end
 
         def hue_to_rgb(hue)
-          p, q, t = hue[:p], hue[:q], hue[:t]
+          p, q, t = hue[:p].to_f, hue[:q].to_f, hue[:t].to_f
           t += 1 if t < 0
           t -= 1 if t > 1
           return p + (q - p) * 6 * t if t < (1 / 6.0)
@@ -122,7 +127,6 @@ module Color
           raise 'Invalid hex number' unless hex.hex?
           Color::RGB.by_hex(hex) 
         end
-
       end
     end
   end

@@ -32,5 +32,11 @@ describe Hash do
       color = h.to_color(:hsv)
       color.hex.must_equal '000000'
     end
+
+    it 'h: 61, s: 0.30, l: 0.55' do
+      h = { h: 61, s: 0.30, l: 0.55 }
+      color = h.to_color(:hsl)
+      color.hex.must_equal 'aeaf6a'
+    end
   end
 end

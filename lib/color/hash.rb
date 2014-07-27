@@ -14,6 +14,13 @@ class Hash
       v = self.fetch(:v, self.fetch(:value, 0)).to_f
       return Color::Maker::Support::hsv_to_color(h: h, s: s, v: v)
     end
+
+    if format == :hsl
+      h = self.fetch(:h, self.fetch(:hue, 0)).to_f
+      s = self.fetch(:s, self.fetch(:saturation, 0)).to_f
+      l = self.fetch(:l, self.fetch(:lightness, 0)).to_f
+      return Color::Maker::Support::hsl_to_color(h: h, s: s, l: l)
+    end
     
     raise "Unknow color format: #{format}"
   end
