@@ -3,6 +3,7 @@ module Color
     module Support
       class << self
         def hsv_to_rgb(hsv)
+          hsv = normalize_color_keys(hsv, :hsv)
           h, s, v = hsv[:h].to_f / 360.0, hsv[:s].to_f, hsv[:v].to_f
           i = (h * 6).floor
           f = h * 6 - i
@@ -29,6 +30,7 @@ module Color
         end
 
         def rgb_to_hsv(rgb)
+          rgb = normalize_color_keys(rgb, :rgb)
           r, g, b = rgb[:r].to_f / 255.0, rgb[:g].to_f / 255.0, rgb[:b].to_f / 255.0  
           min, max = [r, g, b].min, [r, g, b].max
           delta = max - min
@@ -51,6 +53,7 @@ module Color
         end
 
         def rgb_to_hsl(rgb)
+          rgb = normalize_color_keys(rgb, :rgb)
           r, g, b = rgb[:r].to_f / 255.0, rgb[:g].to_f / 255.0, rgb[:b].to_f / 255.0  
           min, max = [r, g, b].min, [r, g, b].max
           delta = max - min
@@ -75,6 +78,7 @@ module Color
         end
 
         def hsl_to_rgb(hsl)
+          hsl = normalize_color_keys(hsl, :hsl)
           h, s, l = hsl[:h].to_f / 360.0, hsl[:s].to_f, hsl[:l].to_f
           return { r: l, g: l, b: l } if s == 0
 
@@ -126,6 +130,30 @@ module Color
           hex = hex.delete('#').strip
           raise 'Invalid hex number' unless hex.hex?
           Color::RGB.by_hex(hex) 
+        end
+        private 
+        def normalize_color_keys(hash, format = :rgb)
+          format = format.to_sym
+
+          keys = []
+          case format
+          when :rgb
+            keys = [[:r, :red], [:b, :blue], [:g, :green]]
+          when :hsv
+            keys = [[:h, :hue], [:s, :saturation], [:v, :value]]
+          when :hsl
+            keys = [[:h, :hue], [:s, :saturation], [:l, :lightness, :luminosity, :light]]
+          end
+
+          return {} if keys.empty?
+
+          normalized = {}
+          keys.each do |variants|
+            default = variants.first
+            normalized[default] = 0
+            variants.each { |key| normalized[default] = hash[key] if hash[key] }
+          end
+          normalized
         end
       end
     end
