@@ -55,4 +55,12 @@ describe Color::Maker::Support do
     rgb = Color::Maker::Support.hsl_to_rgb(h: 61, s: 0.30, l: 0.55)
     rgb.must_equal({ r: 174, g: 175, b: 106 })
   end
+
+  it 'hsl to hsv' do
+    rgb = Color::Maker::Support.hsl_to_hsv(h: 120.7, s: 0.856, l: 0.408)
+    rgb.must_equal({ h: 120.7, s: 0.922, v: 0.757 })
+
+    rgb = Color::Maker::Support.hsl_to_hsv(h: 207.1, s: 0.766, l: 0.42)
+    rgb.must_equal({ h: 207.1, s: 0.868, v: 0.741 })
+  end
 end

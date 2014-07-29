@@ -32,15 +32,18 @@ module Color
     end
 
     def initialize(options = {})
-      options[:greyscale] ||= options.fetch(:grayscale, false)
+      options = normalize_options(options)
+      #options[:greyscale] ||= options.fetch(:grayscale, false)
       @options = self.class.defaults.merge(options)
       @generator = Random.new(options[:seed]) rescue Random.new
     end
 
     def make(options = {})
-      self.generator = Random.new(options[:seed]) if options[:seed]
+      generator = self.generator
+      generator = Random.new(options[:seed]) if options[:seed]
 
-      options[:greyscale] ||= options.fetch(:grayscale, false)
+      options = normalize_options(options)
+      #options[:greyscale] ||= options.fetch(:grayscale, false)
       options = self.class.defaults.merge(@options.merge(options))
 
       base_color = from_name(options[:base_color]) if options[:base_color]
@@ -50,14 +53,14 @@ module Color
           base_color = base_color.to_hsl
           base_color = Support::hsl_to_hsv(h: base_color.hue, s: base_color.s, l: base_color.l)
 
-          hue = self.generator.rand((base_color[:h] - 5)..(base_color[:h] + 5))
-          saturation = self.generator.rand(0.4..0.85)
-          value = self.generator.rand(0.4..0.85)
+          hue = generator.rand((base_color[:h] - 5)..(base_color[:h] + 5))
+          saturation = generator.rand(0.4..0.85)
+          value = generator.rand(0.4..0.85)
           colors << [hue, saturation, value].to_color(:hsv)
         else
-          hue = make_hue(options)
-          saturation = make_saturation(options)
-          value = make_value(options)
+          hue = make_hue(options, generator)
+          saturation = make_saturation(options, generator)
+          value = make_value(options, generator)
 
           colors << [hue, saturation, value].to_color(:hsv)
         end
@@ -68,15 +71,58 @@ module Color
     end
 
     private
+    def normalize_options(options)
+      normalized = {}
+
+      variants = { hue: [:h], saturation: [:s], value: [:v], 
+                   red: [:r], green: [:g], blue: [:b],
+                   lightness: [:l, :luminosity, :light],
+                   greyscale: [:grayscale, :gray] }
+
+      variants.each do |key, keys|
+        found_key = keys.find { |k| options[k] } || key
+        normalized[key] ||= options[found_key] if options[found_key]
+        options.delete(found_key) if normalized[key]
+      end
+
+      options.each { |key, value| normalized[key] = value unless normalized.key?(key) }
+      normalized
+    end
+
+    def extract_color(options)
+      formats = { :hsv => [:hue, :saturation, :value],
+                  :rgb => [:red, :green, :blue ],
+                  :hsl => [:hue, :saturation, :lightness] }
+
+      format = formats.map do |key, keys| 
+        [key, keys.count { |k| options[k] } ] 
+      end
+      format = format.max_by { |v| v.last }.first
+
+      color = {}
+      formats[format].each { |value| color[value] = options[value].to_f }
+
+      case format
+      when :rgb
+        color = Support.rgb_to_hsv(color)
+      when :hsl
+        color = Support.hsl_to_hsv(color)
+      end
+
+      color
+    end
+
     def from_name(name)
       self.class.colors[name.downcase.to_sym]
     end
 
-    def make_hue(options = {})
+    def make_hue(options = {}, generator = nil)
+      generator ||= self.generator
+
       if options[:greyscale]
         hue = 0
       elsif options[:golden]
-        random_hue = self.generator.rand(0..360)
+        random_hue = generator.rand(0..360)
         hue = (random_hue + (random_hue / PHI)) % 360
       elsif options[:hue].nil? || options[:random]
         hue = random_hue
@@ -86,11 +132,13 @@ module Color
       hue
     end
 
-    def make_saturation(options = {})
+    def make_saturation(options = {}, generator = nil)
+      generator ||= self.generator
+
       if options[:greyscale]
         saturation = 0
       elsif options[:random]
-        saturation = self.generator.rand(0..1.0)
+        saturation = generator.rand(0..1.0)
       elsif options[:saturation].nil?
         saturation = 0.4
       else
@@ -100,7 +148,9 @@ module Color
       saturation
     end
 
-    def make_value(options = {})
+    def make_value(options = {}, generator = nil)
+      generator ||= self.generator
+
       if options[:random]
         value = self.generator.rand(0..1.0)
       elsif options[:greyscale]

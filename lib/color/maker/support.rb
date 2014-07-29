@@ -36,7 +36,7 @@ module Color
           delta = max - min
           v = max
 
-          return { h: -1, s: 0, v: v } if max == 0
+          return { h: 0, s: 0, v: v.round(3) } if max == 0 || delta == 0
 
           s = delta / max
           h = 4 + (r - g) / delta
@@ -131,6 +131,7 @@ module Color
           raise 'Invalid hex number' unless hex.hex?
           Color::RGB.by_hex(hex) 
         end
+
         private 
         def normalize_color_keys(hash, format = :rgb)
           format = format.to_sym
