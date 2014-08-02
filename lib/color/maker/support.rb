@@ -3,7 +3,7 @@ module Color
     module Support
       class << self
         def hsv_to_rgb(hsv)
-          hsv = normalize_color_keys(hsv, :hsv)
+          hsv = normalize_color_keys(hsv, format: :hsv)
           h, s, v = hsv[:h].to_f / 360.0, hsv[:s].to_f, hsv[:v].to_f
           i = (h * 6).floor
           f = h * 6 - i
@@ -30,7 +30,7 @@ module Color
         end
 
         def rgb_to_hsv(rgb)
-          rgb = normalize_color_keys(rgb, :rgb)
+          rgb = normalize_color_keys(rgb, format: :rgb)
           r, g, b = rgb[:r].to_f / 255.0, rgb[:g].to_f / 255.0, rgb[:b].to_f / 255.0  
           min, max = [r, g, b].min, [r, g, b].max
           delta = max - min
@@ -53,7 +53,7 @@ module Color
         end
 
         def rgb_to_hsl(rgb)
-          rgb = normalize_color_keys(rgb, :rgb)
+          rgb = normalize_color_keys(rgb, format: :rgb)
           r, g, b = rgb[:r].to_f / 255.0, rgb[:g].to_f / 255.0, rgb[:b].to_f / 255.0  
           min, max = [r, g, b].min, [r, g, b].max
           delta = max - min
@@ -78,7 +78,7 @@ module Color
         end
 
         def hsl_to_rgb(hsl)
-          hsl = normalize_color_keys(hsl, :hsl)
+          hsl = normalize_color_keys(hsl, format: :hsl)
           h, s, l = hsl[:h].to_f / 360.0, hsl[:s].to_f, hsl[:l].to_f
           return { r: l, g: l, b: l } if s == 0
 
@@ -118,6 +118,7 @@ module Color
         end
 
         def rgb_to_color(rgb)
+          rgb = normalize_color_keys(rgb, format: :rgb)
           Color::RGB.new(rgb[:r], rgb[:g], rgb[:b])
         end
 
@@ -132,28 +133,26 @@ module Color
           Color::RGB.by_hex(hex) 
         end
 
-        private 
-        def normalize_color_keys(hash, format = :rgb)
-          format = format.to_sym
+        def normalize_color_keys(hash, options = {})
+          default_options =  { format: :rgb, short: true }
+          options = default_options.merge(options)
 
-          keys = []
-          case format
-          when :rgb
-            keys = [[:r, :red], [:b, :blue], [:g, :green]]
-          when :hsv
-            keys = [[:h, :hue], [:s, :saturation], [:v, :value]]
-          when :hsl
-            keys = [[:h, :hue], [:s, :saturation], [:l, :lightness, :luminosity, :light]]
+          format = options[:format].to_sym
+            
+          keys = {
+            rgb: { [:r, :red] => [:r, :red], [:b, :blue] => [:b, :blue], [:g, :green] => [:g, :green] },
+            hsv: { [:h, :hue] => [:h, :hue], [:s, :saturation] => [:s, :saturation], [:v, :value] => [:v, :value] },
+            hsl: { [:h, :hue] => [:h, :hue], [:s, :saturation] => [:s, :saturation], [:l, :light] => [:l, :lightness, :luminosity, :light] }
+          }
+
+          return unless keys[format]
+
+          normalized = hash.dup
+          keys[format].each do |key, variants|
+            default = options[:short] ? key.first : key.last
+            normalized.replace_key!(variants, default)
           end
 
-          return {} if keys.empty?
-
-          normalized = {}
-          keys.each do |variants|
-            default = variants.first
-            normalized[default] = 0
-            variants.each { |key| normalized[default] = hash[key] if hash[key] }
-          end
           normalized
         end
       end

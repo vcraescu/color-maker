@@ -26,14 +26,21 @@ module Color
         @hex_colors = ::YAML.load_file(@colors_path)
         @hex_colors.symbolize_keys!
         @colors = Hash.new do |h, k|
-          h[k] = Color::RGB.by_hex(@hex_colors[k])
+          if @hex_colors[k]
+            h[k] = Color::RGB.by_hex(@hex_colors[k])
+          else
+            h[k] = Color::RGB.by_name(k)
+          end
         end
+      end
+
+      def by_name(name)
+        self.colors[name.downcase.to_sym]
       end
     end
 
     def initialize(options = {})
       options = normalize_options(options)
-      #options[:greyscale] ||= options.fetch(:grayscale, false)
       @options = self.class.defaults.merge(options)
       @generator = Random.new(options[:seed]) rescue Random.new
     end
@@ -43,10 +50,9 @@ module Color
       generator = Random.new(options[:seed]) if options[:seed]
 
       options = normalize_options(options)
-      #options[:greyscale] ||= options.fetch(:grayscale, false)
       options = self.class.defaults.merge(@options.merge(options))
 
-      base_color = from_name(options[:base_color]) if options[:base_color]
+      base_color = self.class.by_name(options[:base_color]) if options[:base_color]
       colors = []
       options[:count].times do |i|
         if base_color
@@ -70,6 +76,7 @@ module Color
       colors
     end
 
+
     private
     def normalize_options(options)
       normalized = {}
@@ -86,6 +93,7 @@ module Color
       end
 
       options.each { |key, value| normalized[key] = value unless normalized.key?(key) }
+      normalized.merge(extract_color(normalized))
       normalized
     end
 
@@ -110,10 +118,6 @@ module Color
       end
 
       color
-    end
-
-    def from_name(name)
-      self.class.colors[name.downcase.to_sym]
     end
 
     def make_hue(options = {}, generator = nil)
