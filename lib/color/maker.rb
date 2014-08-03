@@ -3,7 +3,7 @@ module Color
   class Maker
     PHI = 0.618033988749895
 
-    # Value generator, a Random class instance
+    # Value generator, Random class instance
     attr_accessor :generator
 
     @colors_path = File.join(File.dirname(__FILE__), '..', 'colors.yml')
