@@ -38,5 +38,13 @@ describe Hash do
       color = h.to_color(:hsl)
       color.hex.must_equal 'aeaf6a'
     end
+    it 'replace key!' do
+      h = { one: 1, two: 2 }
+      h.replace_key!([:one, :two], :three)
+      h.must_equal({ three: 2 })
+
+      h = { one: 1, two: 2 }
+      h.replace_key!(:one, :three).must_equal({three: 1, two: 2})
+    end
   end
 end

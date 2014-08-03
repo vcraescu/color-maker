@@ -57,10 +57,18 @@ describe Color::Maker::Support do
   end
 
   it 'hsl to hsv' do
-    rgb = Color::Maker::Support.hsl_to_hsv(h: 120.7, s: 0.856, l: 0.408)
-    rgb.must_equal({ h: 120.7, s: 0.922, v: 0.757 })
+    hsv = Color::Maker::Support.hsl_to_hsv(h: 120.7, s: 0.856, l: 0.408)
+    hsv.must_equal({ h: 120.7, s: 0.922, v: 0.757 })
 
-    rgb = Color::Maker::Support.hsl_to_hsv(h: 207.1, s: 0.766, l: 0.42)
-    rgb.must_equal({ h: 207.1, s: 0.868, v: 0.741 })
+    hsv = Color::Maker::Support.hsl_to_hsv(h: 207.1, s: 0.766, l: 0.42)
+    hsv.must_equal({ h: 207.1, s: 0.868, v: 0.741 })
+  end
+
+  it 'hsv to hsl' do
+    hsl = Color::Maker::Support.hsv_to_hsl(h: 120.7, s: 0.922, v: 0.757)
+    hsl.must_equal({ h: 120.7, s: 0.856, l: 0.408 })
+
+    hsl = Color::Maker::Support.hsv_to_hsl(h: 207.1, s: 0.868, v: 0.741)
+    hsl.must_equal({ h: 207.1, s: 0.766, l: 0.42 })
   end
 end

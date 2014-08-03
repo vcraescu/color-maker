@@ -1,9 +1,19 @@
+# Monkey patch String class with color conversion utility methods
 class String
+  # Convert a String to color
+  #
+  # @param [Symbol] format color format (:hex, :html, :name)
+  # @return Color::RGB
+  # @example
+  #   '0x0000ff'.to_color(:hex) #=> Color::RGB
+  #   '#0000ff'.to_color(:html) #=> Color::RGB
+  #   'aquamarine'.to_color(:name) #=> Color::RGB
   def to_color(format = :hex)
     format = format.to_sym
 
     if format == :hex
-      return Color::RGB.by_hex(self)
+      text = self.sub(/0x/, '')
+      return Color::RGB.by_hex(text)
     end
 
     if format == :html
@@ -15,10 +25,6 @@ class String
     end
     
     raise "Unknown format: #{format}"
-  end
-
-  def hex?
-    self.include?(self.hex.to_s(16))
   end
 end
 
