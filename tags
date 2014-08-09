@@ -188,6 +188,8 @@ Array	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_supp
 Array	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/to_query.rb	/^class Array$/;"	c
 Array	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe.rb	/^    class Array < ::Array$/;"	c	class:ThreadSafe
 Array	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe.rb	/^    class Array < ::Array; end$/;"	c	class:ThreadSafe
+Array	/media/dev/Projects/color-maker/lib/color/array.rb	/^class Array$/;"	c
+Array	lib/color/array.rb	/^class Array$/;"	c
 Assertion	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/lib/minitest.rb	/^  class Assertion < Exception$/;"	c	class:SummaryReporter
 Assertions	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/testing/assertions.rb	/^    module Assertions$/;"	m	class:ActiveSupport.Testing
 Assertions	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/lib/minitest/assertions.rb	/^  module Assertions$/;"	m	class:Minitest
@@ -406,6 +408,12 @@ Color	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb/colors.rb
 Color	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb/contrast.rb	/^class Color::RGB$/;"	c
 Color	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb/metallic.rb	/^class Color::RGB$/;"	c
 Color	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/yiq.rb	/^class Color::YIQ$/;"	c
+Color	/media/dev/Projects/color-maker/lib/color/maker.rb	/^module Color$/;"	m
+Color	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^module Color$/;"	m
+Color	/media/dev/Projects/color-maker/lib/color/maker/version.rb	/^module Color$/;"	m
+Color	lib/color/maker.rb	/^module Color$/;"	m
+Color	lib/color/maker/support.rb	/^module Color$/;"	m
+Color	lib/color/maker/version.rb	/^module Color$/;"	m
 Command	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/command.rb	/^  class Command < Struct.new(:name, :description, :long_description, :usage, :options)$/;"	c	class:Thor
 Compiler	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/backend/interpolation_compiler.rb	/^      module Compiler$/;"	m	class:I18n.Backend.InterpolationCompiler
 CompositePublisher	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/contrib/compositepublisher.rb	/^  class CompositePublisher$/;"	c	class:Rake
@@ -660,6 +668,8 @@ Hash	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_suppo
 Hash	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/core_ext/hash.rb	/^class Hash$/;"	c
 Hash	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe.rb	/^    class Hash < ::Hash$/;"	c	class:ThreadSafe
 Hash	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe.rb	/^    class Hash < ::Hash; end$/;"	c	class:ThreadSafe
+Hash	/media/dev/Projects/color-maker/lib/color/hash.rb	/^class Hash$/;"	c
+Hash	lib/color/hash.rb	/^class Hash$/;"	c
 HashBuilder	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/xml_mini/libxmlsax.rb	/^    class HashBuilder$/;"	c	class:ActiveSupport.XmlMini_LibXMLSAX
 HashBuilder	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/xml_mini/nokogirisax.rb	/^    class HashBuilder < Nokogiri::XML::SAX::Document$/;"	c	class:ActiveSupport.XmlMini_NokogiriSAX
 HashCollisionKey	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/test/test_helper.rb	/^    class HashCollisionKey$/;"	c	class:ThreadSafe.Test
@@ -867,6 +877,12 @@ LoggerSilence	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/act
 London	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/test/tzinfo-data/tzinfo/data/definitions/Europe/London.rb	/^        module London$/;"	m	class:TZInfo.Data.Definitions.Europe
 Lookup	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/tests/lookup.rb	/^    module Lookup$/;"	m	class:I18n.Tests
 MakefileLoader	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/loaders/makefile.rb	/^  class MakefileLoader$/;"	c	class:Rake
+Maker	/media/dev/Projects/color-maker/lib/color/maker.rb	/^  class Maker$/;"	c	class:Color
+Maker	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^  class Maker$/;"	c	class:Color
+Maker	/media/dev/Projects/color-maker/lib/color/maker/version.rb	/^  class Maker$/;"	c	class:Color
+Maker	lib/color/maker.rb	/^  class Maker$/;"	c	class:Color
+Maker	lib/color/maker/support.rb	/^  class Maker$/;"	c	class:Color
+Maker	lib/color/maker/version.rb	/^  class Maker$/;"	c	class:Color
 MalformattedArgumentError	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/error.rb	/^  class MalformattedArgumentError < InvocationError$/;"	c	class:Thor
 Marshal	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/marshal.rb	/^module Marshal$/;"	m
 MarshalError	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler.rb	/^  class MarshalError < StandardError; end$/;"	c	class:Bundler
@@ -946,10 +962,6 @@ Net	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/net/
 Net	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/net/http/persistent/ssl_reuse.rb	/^class Net::HTTP::Persistent::SSLReuse < Net::HTTP$/;"	c
 Net	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/spec/install/gems/dependency_api_spec.rb	/^        class Net::HTTP$/;"	c
 New_York	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/test/tzinfo-data/tzinfo/data/definitions/America/New_York.rb	/^        module New_York$/;"	m	class:TZInfo.Data.Definitions.America
-NiceColor	/media/dev/Projects/nice_color/lib/nice_color.rb	/^module NiceColor$/;"	m
-NiceColor	/media/dev/Projects/nice_color/lib/nice_color/version.rb	/^module NiceColor$/;"	m
-NiceColor	lib/nice_color.rb	/^module NiceColor$/;"	m
-NiceColor	lib/nice_color/version.rb	/^module NiceColor$/;"	m
 NilClass	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/blank.rb	/^class NilClass$/;"	c
 NilClass	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/duplicable.rb	/^class NilClass$/;"	c
 NilClass	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/json.rb	/^class NilClass$/;"	c
@@ -1216,6 +1228,8 @@ String	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_sup
 String	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/string/zones.rb	/^class String$/;"	c
 String	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/core_ext/string/interpolate.rb	/^  class String$/;"	c
 String	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/ext/string.rb	/^class String$/;"	c
+String	/media/dev/Projects/color-maker/lib/color/string.rb	/^class String$/;"	c
+String	lib/color/string.rb	/^class String$/;"	c
 StringInquirer	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/string_inquirer.rb	/^  class StringInquirer < String$/;"	c	class:ActiveSupport
 Striped64	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/util/striped64.rb	/^    class Striped64$/;"	c	class:ThreadSafe.Util
 Struct	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/json.rb	/^class Struct #:nodoc:$/;"	c
@@ -1227,6 +1241,8 @@ SubscriberQueueRegistry	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1
 Subscribers	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/notifications/fanout.rb	/^      module Subscribers # :nodoc:$/;"	m	class:ActiveSupport.Notifications.Fanout
 Sudo	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/spec/support/sudo.rb	/^  module Sudo$/;"	m	class:Spec
 SummaryReporter	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/lib/minitest.rb	/^  class SummaryReporter < StatisticsReporter$/;"	c
+Support	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^    module Support$/;"	m	class:Color.Maker
+Support	lib/color/maker/support.rb	/^    module Support$/;"	m	class:Color.Maker
 Symbol	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/duplicable.rb	/^class Symbol$/;"	c
 Symbol	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/object/json.rb	/^class Symbol$/;"	c
 SynchronizedCacheBackend	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/synchronized_cache_backend.rb	/^  class SynchronizedCacheBackend < NonConcurrentCacheBackend$/;"	c	class:ThreadSafe
@@ -2252,8 +2268,8 @@ chmod	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/th
 chore	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/promise.rb	/^    def chore$/;"	f	class:Rake.Promise
 chown_system_gems_to_root	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/spec/support/sudo.rb	/^    def chown_system_gems_to_root$/;"	f	class:Spec.Sudo
 civil_from_format	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/date_time/conversions.rb	/^  def self.civil_from_format(utc_or_local, year, month=1, day=1, hour=0, min=0, sec=0)$/;"	F	class:DateTime
-clamp	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def clamp(num, min, max)$/;"	f	class:NiceColor
-clamp	lib/nice_color.rb	/^    def clamp(num, min, max)$/;"	f	class:NiceColor
+clamp	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def clamp(num, min, max)$/;"	f	class:Color
+clamp	lib/color/maker.rb	/^    def clamp(num, min, max)$/;"	f	class:Color
 class	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/deprecation/proxy_wrappers.rb	/^      def class$/;"	f	class:ActiveSupport.Deprecation.DeprecatedConstantProxy
 class_attribute	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/class/attribute.rb	/^  def class_attribute(*attrs)$/;"	f	class:Class
 class_eval	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/kernel/singleton_class.rb	/^  def class_eval(*args, &block)$/;"	f	class:Kernel
@@ -2329,8 +2345,8 @@ collect_file	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/ruby182
 collect_prerequisites	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/task.rb	/^    def collect_prerequisites(seen) # :nodoc:$/;"	f	class:Rake.Task
 color	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/log_subscriber.rb	/^    def color(text, color, bold=false)$/;"	f
 color_diff	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/palette/monocontrast.rb	/^  def color_diff(c1, c2)$/;"	f
-colors	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def colors$/;"	f	class:NiceColor
-colors	lib/nice_color.rb	/^    def colors$/;"	f	class:NiceColor
+colors	/media/dev/Projects/color-maker/lib/color/maker.rb	/^      def colors$/;"	f	class:Color.Maker
+colors	lib/color/maker.rb	/^      def colors$/;"	f	class:Color.Maker
 command	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/test/test_rake_file_utils.rb	/^  def command(name, text)$/;"	f
 command_help	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor.rb	/^    def command_help(shell, command_name)$/;"	f
 command_line	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/test/test_rake_application_options.rb	/^  def command_line(*options)$/;"	f
@@ -2942,6 +2958,8 @@ extension_dir_name	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bund
 extract!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/slice.rb	/^  def extract!(*keys)$/;"	f	class:Hash
 extract_callstack	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/deprecation/reporting.rb	/^        def extract_callstack(callstack)$/;"	f	class:ActiveSupport.Deprecation.Reporting
 extract_circular_gems	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/spec_set.rb	/^    def extract_circular_gems(error)$/;"	f	class:Bundler
+extract_color	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def extract_color(options)$/;"	f	class:Color
+extract_color	lib/color/maker.rb	/^    def extract_color(options)$/;"	f	class:Color
 extract_colors	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb.rb	/^  def extract_colors(text, mode = :both)$/;"	f
 extract_non_symbol_default!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/backend/fallbacks.rb	/^      def extract_non_symbol_default!(options)$/;"	f	class:Backend.Fallbacks
 extract_options!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/array/extract_options.rb	/^  def extract_options!$/;"	f	class:Array
@@ -3096,8 +3114,8 @@ from_io	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/palette/gim
 from_lock	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/source/git.rb	/^      def self.from_lock(options)$/;"	F	class:Bundler.Source.Git
 from_lock	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/source/path.rb	/^      def self.from_lock(options)$/;"	F	class:Bundler.Source.Path
 from_lock	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/source/rubygems.rb	/^      def self.from_lock(options)$/;"	F	class:Bundler.Source.Rubygems
-from_name	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def from_name(name)$/;"	f	class:NiceColor
-from_name	lib/nice_color.rb	/^    def from_name(name)$/;"	f	class:NiceColor
+from_name	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def from_name(name)$/;"	f	class:Color
+from_name	lib/color/maker.rb	/^    def from_name(name)$/;"	f	class:Color
 from_percent	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/cmyk.rb	/^    def from_percent(c = 0, m = 0, y = 0, k = 0, &block)$/;"	f	class:Color
 from_percent	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/grayscale.rb	/^    def from_percent(g = 0, &block)$/;"	f	class:Color
 from_percentage	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb.rb	/^  def from_percentage(r = 0, g = 0, b = 0, &block)$/;"	f
@@ -3279,6 +3297,10 @@ help	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/tho
 help	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/group.rb	/^    def help(shell)$/;"	f	class:Thor
 help	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/runner.rb	/^  def help(meth = nil)$/;"	f	class:Thor
 hex	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb.rb	/^  def hex$/;"	f	class:Color
+hex?	/media/dev/Projects/color-maker/lib/color/string.rb	/^  def hex?$/;"	f	class:String
+hex?	lib/color/string.rb	/^  def hex?$/;"	f	class:String
+hex_to_color	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hex_to_color(hex)$/;"	f	class:Color.Maker.Support
+hex_to_color	lib/color/maker/support.rb	/^        def hex_to_color(hex)$/;"	f	class:Color.Maker.Support
 hidden?	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/command.rb	/^    def hidden?$/;"	f	class:HiddenCommand
 hidden?	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/command.rb	/^    def hidden?$/;"	f	class:Thor.Command
 history	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/thread_pool.rb	/^    def history                 # :nodoc:$/;"	f	class:Rake.ThreadPool
@@ -3288,10 +3310,18 @@ hook!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_supp
 host	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/ruby_version.rb	/^    def host$/;"	f	class:Bundler.RubyVersion
 hour	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/lib/tzinfo/time_or_datetime.rb	/^    def hour$/;"	f	class:TZInfo.TimeOrDateTime
 hours	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/numeric/time.rb	/^  def hours$/;"	f	class:Numeric
-hsv_to_color	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def hsv_to_color(hsv)$/;"	f	class:NiceColor
-hsv_to_color	lib/nice_color.rb	/^    def hsv_to_color(hsv)$/;"	f	class:NiceColor
-hsv_to_rgb	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def hsv_to_rgb(hsv)$/;"	f	class:NiceColor
-hsv_to_rgb	lib/nice_color.rb	/^    def hsv_to_rgb(hsv)$/;"	f	class:NiceColor
+hsl_to_color	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hsl_to_color(hsl)$/;"	f	class:Color.Maker.Support
+hsl_to_color	lib/color/maker/support.rb	/^        def hsl_to_color(hsl)$/;"	f	class:Color.Maker.Support
+hsl_to_hsv	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hsl_to_hsv(hsl)$/;"	f	class:Color.Maker.Support
+hsl_to_hsv	lib/color/maker/support.rb	/^        def hsl_to_hsv(hsl)$/;"	f	class:Color.Maker.Support
+hsl_to_rgb	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hsl_to_rgb(hsl)$/;"	f	class:Color.Maker.Support
+hsl_to_rgb	lib/color/maker/support.rb	/^        def hsl_to_rgb(hsl)$/;"	f	class:Color.Maker.Support
+hsv_to_color	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hsv_to_color(hsv)$/;"	f	class:Color.Maker.Support
+hsv_to_color	lib/color/maker/support.rb	/^        def hsv_to_color(hsv)$/;"	f	class:Color.Maker.Support
+hsv_to_hsl	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hsv_to_hsl(hsv)$/;"	f	class:Color.Maker.Support
+hsv_to_hsl	lib/color/maker/support.rb	/^        def hsv_to_hsl(hsv)$/;"	f	class:Color.Maker.Support
+hsv_to_rgb	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hsv_to_rgb(hsv)$/;"	f	class:Color.Maker.Support
+hsv_to_rgb	lib/color/maker/support.rb	/^        def hsv_to_rgb(hsv)$/;"	f	class:Color.Maker.Support
 html	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/cmyk.rb	/^  def html$/;"	f
 html	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/grayscale.rb	/^  def html$/;"	f
 html	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/hsl.rb	/^  def html$/;"	f
@@ -3311,6 +3341,8 @@ httpdate	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_s
 hue	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/hsl.rb	/^  def hue$/;"	f
 hue=	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/hsl.rb	/^  def hue=(hh)$/;"	f
 hue_to_rgb	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/hsl.rb	/^  def hue_to_rgb(h, t1, t2)$/;"	f
+hue_to_rgb	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def hue_to_rgb(hue)$/;"	f	class:Color.Maker.Support
+hue_to_rgb	lib/color/maker/support.rb	/^        def hue_to_rgb(hue)$/;"	f	class:Color.Maker.Support
 human	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/inflector/inflections.rb	/^      def human(rule, replacement)$/;"	f	class:ActiveSupport.Inflector.Inflections
 human_name	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/parser/option.rb	/^    def human_name$/;"	f	class:Thor
 humanize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/string/inflections.rb	/^  def humanize(options = {})$/;"	f	class:String
@@ -3647,6 +3679,8 @@ initialize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/test/tc_data_time
 initialize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/test/tc_timezone.rb	/^    def initialize(offset, previous_offset, at)$/;"	f	class:TCTimezone.TestTimezoneTransition
 initialize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/test/tc_timezone_period.rb	/^    def initialize(offset, previous_offset, at)$/;"	f	class:TCTimezonePeriod.TestTimezoneTransition
 initialize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/test/tc_timezone_transition.rb	/^    def initialize(offset, previous_offset, at)$/;"	f	class:TCTimezoneTransition.TestTimezoneTransition
+initialize	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def initialize(options = {})$/;"	f	class:Color
+initialize	lib/color/maker.rb	/^    def initialize(options = {})$/;"	f	class:Color
 initialize_added	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor.rb	/^    def initialize_added #:nodoc:$/;"	f	class:printable_commands
 initialize_added	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/base.rb	/^      def initialize_added #:nodoc:$/;"	f	class:Thor
 initialize_copy	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/callbacks.rb	/^      def initialize_copy(other)$/;"	f	class:ActiveSupport.Callbacks.CallbackChain
@@ -3985,14 +4019,20 @@ magenta=	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/cmyk.rb	/^
 maglev?	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/current_ruby.rb	/^    def maglev?$/;"	f	class:Bundler.CurrentRuby
 maglev?	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/lib/minitest.rb	/^    def maglev? platform = defined?(RUBY_ENGINE) && RUBY_ENGINE$/;"	f	class:SummaryReporter.Guard
 make	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/linked_list.rb	/^    def self.make(*args)$/;"	F	class:Rake.LinkedList
-make	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def make(options = {})$/;"	f	class:NiceColor
-make	lib/nice_color.rb	/^    def make(options = {})$/;"	f	class:NiceColor
+make	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def make(options = {})$/;"	f	class:Color
+make	lib/color/maker.rb	/^    def make(options = {})$/;"	f	class:Color
 make_dummy	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/test/test_rake_application.rb	/^    def loader.make_dummy$/;"	F	class:TestRakeApplication.util_loader
+make_hue	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def make_hue(options = {}, generator = nil)$/;"	f	class:Color
+make_hue	lib/color/maker.rb	/^    def make_hue(options = {}, generator = nil)$/;"	f	class:Color
 make_lambda	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/callbacks.rb	/^      def make_lambda(filter)$/;"	f	class:ActiveSupport.Callbacks.Callback
 make_my_diffs_pretty	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/lib/minitest/test.rb	/^    def self.make_my_diffs_pretty!$/;"	F
+make_saturation	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def make_saturation(options = {}, generator = nil)$/;"	f	class:Color
+make_saturation	lib/color/maker.rb	/^    def make_saturation(options = {}, generator = nil)$/;"	f	class:Color
 make_signed_int32	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/lib/tzinfo/zoneinfo_timezone_info.rb	/^      def make_signed_int32(long)$/;"	f	class:TZInfo.ZoneinfoTimezoneInfo
 make_signed_int64	/home/viorel/.rvm/gems/ruby-2.1.1/gems/tzinfo-1.2.1/lib/tzinfo/zoneinfo_timezone_info.rb	/^      def make_signed_int64(high, low)$/;"	f	class:TZInfo.ZoneinfoTimezoneInfo
 make_sources	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/task_manager.rb	/^    def make_sources(task_name, extensions)$/;"	f	class:Rake.TaskManager
+make_value	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def make_value(options = {}, generator = nil)$/;"	f	class:Color
+make_value	lib/color/maker.rb	/^    def make_value(options = {}, generator = nil)$/;"	f	class:Color
 makedirs	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/contrib/ftptools.rb	/^    def makedirs(path)$/;"	f	class:Rake
 many?	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/enumerable.rb	/^  def many?$/;"	f	class:Enumerable
 map	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor.rb	/^    def map(mappings = nil)$/;"	f	class:Thor
@@ -4220,6 +4260,8 @@ normalize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/backend/ge
 normalize	/home/viorel/.rvm/gems/ruby-2.1.1/gems/rake-10.3.2/lib/rake/win32.rb	/^      def normalize(path)$/;"	f	class:Rake.Win32
 normalize_byte	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color.rb	/^  def normalize_byte(value)$/;"	f
 normalize_callback_params	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/callbacks.rb	/^      def normalize_callback_params(filters, block) # :nodoc:$/;"	f	class:ActiveSupport.Callbacks.ClassMethods
+normalize_color_keys	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def normalize_color_keys(hash, options = {})$/;"	f	class:Color.Maker.Support
+normalize_color_keys	lib/color/maker/support.rb	/^        def normalize_color_keys(hash, options = {})$/;"	f	class:Color.Maker.Support
 normalize_command_name	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor.rb	/^    def normalize_command_name(meth) #:nodoc:$/;"	f	class:printable_commands
 normalize_flat_keys	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/backend/flatten.rb	/^      def normalize_flat_keys(locale, key, scope, separator)$/;"	f	class:I18n.Backend.Flatten
 normalize_flat_keys	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n/backend/flatten.rb	/^      def self.normalize_flat_keys(locale, key, scope, separator)$/;"	F	class:I18n.Backend.Flatten
@@ -4228,6 +4270,8 @@ normalize_key	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n.rb	/^ 
 normalize_keys	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/conversions.rb	/^      def normalize_keys(params)$/;"	f	class:ActiveSupport.XMLConverter
 normalize_keys	/home/viorel/.rvm/gems/ruby-2.1.1/gems/i18n-0.6.11/lib/i18n.rb	/^    def normalize_keys(locale, key, scope, separator = nil)$/;"	f
 normalize_options	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/dsl.rb	/^    def normalize_options(name, version, opts)$/;"	f	class:Bundler.Dsl
+normalize_options	/media/dev/Projects/color-maker/lib/color/maker.rb	/^    def normalize_options(options)$/;"	f	class:Color
+normalize_options	lib/color/maker.rb	/^    def normalize_options(options)$/;"	f	class:Color
 normalize_output	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/test/minitest/metametameta.rb	/^  def normalize_output output$/;"	f	class:MetaMetaMetaTestCase
 normalize_output	/home/viorel/.rvm/gems/ruby-2.1.1/gems/minitest-5.4.0/test/minitest/test_minitest_reporter.rb	/^  def normalize_output output$/;"	f	class:TestMinitestReporter
 normalize_percent	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb.rb	/^  def normalize_percent(percent)$/;"	f
@@ -4699,6 +4743,8 @@ replace_if_exists	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/t
 replace_if_exists	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/mri_cache_backend.rb	/^    def replace_if_exists(key, new_value)$/;"	f	class:ThreadSafe.MriCacheBackend
 replace_if_exists	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/non_concurrent_cache_backend.rb	/^    def replace_if_exists(key, new_value)$/;"	f	class:ThreadSafe.NonConcurrentCacheBackend
 replace_if_exists	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/synchronized_cache_backend.rb	/^    def replace_if_exists(key, new_value)$/;"	f	class:ThreadSafe.SynchronizedCacheBackend
+replace_key!	/media/dev/Projects/color-maker/lib/color/hash.rb	/^  def replace_key!(needle, replace)$/;"	f	class:Hash
+replace_key!	lib/color/hash.rb	/^  def replace_key!(needle, replace)$/;"	f	class:Hash
 replace_pair	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/atomic_reference_cache_backend.rb	/^    def replace_pair(key, old_value, new_value)$/;"	f	class:ThreadSafe
 replace_pair	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/mri_cache_backend.rb	/^    def replace_pair(key, old_value, new_value)$/;"	f	class:ThreadSafe.MriCacheBackend
 replace_pair	/home/viorel/.rvm/gems/ruby-2.1.1/gems/thread_safe-0.3.4/lib/thread_safe/non_concurrent_cache_backend.rb	/^    def replace_pair(key, old_value, new_value)$/;"	f	class:ThreadSafe.NonConcurrentCacheBackend
@@ -4805,8 +4851,12 @@ revoke!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/
 revoke!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/actions/empty_directory.rb	/^      def revoke!$/;"	f	class:Thor.Actions.EmptyDirectory
 revoke!	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler/vendor/thor/actions/inject_into_file.rb	/^      def revoke!$/;"	f	class:Thor
 rfc2822	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/time_with_zone.rb	/^    def rfc2822$/;"	f	class:ActiveSupport
-rgb_to_color	/media/dev/Projects/nice_color/lib/nice_color.rb	/^    def rgb_to_color(rgb)$/;"	f	class:NiceColor
-rgb_to_color	lib/nice_color.rb	/^    def rgb_to_color(rgb)$/;"	f	class:NiceColor
+rgb_to_color	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def rgb_to_color(rgb)$/;"	f	class:Color.Maker.Support
+rgb_to_color	lib/color/maker/support.rb	/^        def rgb_to_color(rgb)$/;"	f	class:Color.Maker.Support
+rgb_to_hsl	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def rgb_to_hsl(rgb)$/;"	f	class:Color.Maker.Support
+rgb_to_hsl	lib/color/maker/support.rb	/^        def rgb_to_hsl(rgb)$/;"	f	class:Color.Maker.Support
+rgb_to_hsv	/media/dev/Projects/color-maker/lib/color/maker/support.rb	/^        def rgb_to_hsv(rgb)$/;"	f	class:Color.Maker.Support
+rgb_to_hsv	lib/color/maker/support.rb	/^        def rgb_to_hsv(rgb)$/;"	f	class:Color.Maker.Support
 root	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/lib/bundler.rb	/^    def root$/;"	f	class:Bundler
 root	/home/viorel/.rvm/gems/ruby-2.1.1/gems/bundler-1.6.4/spec/support/path.rb	/^    def root$/;"	f	class:Spec.Path
 rotate_hue	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/hsl.rb	/^  def rotate_hue(h)$/;"	f
@@ -7029,6 +7079,12 @@ to_cmyk	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/cmyk.rb	/^ 
 to_cmyk	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/grayscale.rb	/^  def to_cmyk$/;"	f
 to_cmyk	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/hsl.rb	/^  def to_cmyk$/;"	f
 to_cmyk	/home/viorel/.rvm/gems/ruby-2.1.1/gems/color-1.7.1/lib/color/rgb.rb	/^  def to_cmyk$/;"	f	class:Color
+to_color	/media/dev/Projects/color-maker/lib/color/array.rb	/^  def to_color(format = :rgb)$/;"	f	class:Array
+to_color	/media/dev/Projects/color-maker/lib/color/hash.rb	/^  def to_color(format = :rgb)$/;"	f	class:Hash
+to_color	/media/dev/Projects/color-maker/lib/color/string.rb	/^  def to_color$/;"	f	class:String
+to_color	lib/color/array.rb	/^  def to_color(format = :rgb)$/;"	f	class:Array
+to_color	lib/color/hash.rb	/^  def to_color(format = :rgb)$/;"	f	class:Hash
+to_color	lib/color/string.rb	/^  def to_color$/;"	f	class:String
 to_constant_name	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/dependencies.rb	/^    def to_constant_name(desc) #:nodoc:$/;"	f	class:ActiveSupport.Dependencies
 to_date	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/string/conversions.rb	/^  def to_date$/;"	f	class:String
 to_datetime	/home/viorel/.rvm/gems/ruby-2.1.1/gems/activesupport-4.1.4/lib/active_support/core_ext/string/conversions.rb	/^  def to_datetime$/;"	f	class:String
